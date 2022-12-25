@@ -1,0 +1,24 @@
+class Solution {
+    public int[] answerQueries(int[] nums, int[] queries) {
+        Arrays.sort(nums);
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        int prefixSum = nums[0];
+        map.put(prefixSum, 0);
+        
+        for(int i=1; i<nums.length; i++){
+            prefixSum+=nums[i];
+            map.put(prefixSum, i);
+        }
+        //System.out.println(map);
+        int[] ans = new int[queries.length];
+        int i=0;
+        for(int query : queries){
+            Map.Entry<Integer, Integer> entry = map.floorEntry(query);
+            if(entry!=null){
+                ans[i] = entry.getValue()+1;
+            }
+            i++;
+        }
+        return ans;
+    }
+}
