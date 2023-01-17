@@ -1,0 +1,15 @@
+class Solution {
+    public int minFlipsMonoIncr(String s) {
+        int minimumFlips = 0;
+        int countOne = 0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='1'){
+                countOne++;
+            }
+            else{
+                minimumFlips = Math.min(minimumFlips+1, countOne);
+            }
+        }
+        return minimumFlips;
+    }
+}
