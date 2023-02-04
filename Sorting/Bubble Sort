@@ -1,0 +1,38 @@
+public static void bubbleSort(int arr[], int n)
+    {
+        for(int i=n-1;i>0;i--){
+            for(int j=0;j<i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+    }
+    
+    OPTIMISED IMPLEMENTATION OF BUBBLE SORT
+    ----------------------------------------
+    public static void bubbleSort(int arr[], int n)
+    {
+        boolean swap;
+        for(int i=n-1;i>0;i--){
+            swap=false;
+            for(int j=0;j<i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                    swap=true;
+                }
+            }
+            if(swap==false){
+                break;
+            }
+        }
+    }
+    
+    TC=O(N*2)   in both cases
+    SC=O(1)     in both cases 
+    If array is sorted then TC=O(N)
+    If array is reverse sorted then it will that (N*2)swaps and (N*2)comparisions.
