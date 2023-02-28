@@ -4,7 +4,6 @@ class Solution {
         traverse(root, new HashMap<>(), res);
         return res;
     }
-    
     public String traverse(TreeNode root, Map<String, Integer> count, List<TreeNode> res){
         if(root==null)
             return "";
