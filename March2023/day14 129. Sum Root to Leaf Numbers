@@ -1,0 +1,21 @@
+class Solution {
+    static int ans;
+    public int sumNumbers(TreeNode root) {
+        ans = 0;
+        dfs(root, 0);
+        return ans;
+    }
+    private void dfs(TreeNode root, int currPath){
+        if(root==null){
+            return;
+        }
+        if(root.left==null && root.right==null){
+            currPath+=root.val;
+            ans+=currPath;
+            currPath-=root.val;
+        }
+        currPath+=root.val;
+        dfs(root.left, currPath*10);
+        dfs(root.right, currPath*10);
+    }
+}
