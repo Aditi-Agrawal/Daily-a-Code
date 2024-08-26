@@ -20,24 +20,22 @@ class Node {
 class Solution {
     public List<Integer> postorder(Node root) {
         List<Integer> list = new ArrayList<>();
-        postorderTraversal(root, list);
+        postTraversal(root,list);
         return list;
     }
 
-    private void postorderTraversal(Node root, List<Integer> list){
+    private void postTraversal(Node root, List<Integer> list){
         if(root==null){
             return;
         }
-        if(root.children == null){
+        if(root.children==null){
             list.add(root.val);
-            return;
         }
 
         for(Node node : root.children){
-            postorderTraversal(node,list);
+            postTraversal(node,list);
         }
+
         list.add(root.val);
     }
-
-
 }
