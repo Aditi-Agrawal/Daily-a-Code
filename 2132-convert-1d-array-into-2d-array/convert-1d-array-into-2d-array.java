@@ -5,15 +5,10 @@ class Solution {
         int ind =0;
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
-                if(ind<original.length){
                     arr[i][j]=original[ind];
                     ind++;
-                }
-            }
-        }
-        return arr;
-        // if(ind==original.length) return arr;
-        // else return new int[0][0];
-          
+            }            
+        }   
+        return arr;   
     }
 }
